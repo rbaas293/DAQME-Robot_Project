@@ -47,15 +47,49 @@ Various potential stumbling blocks exist for our completion of this project, as 
     - Required Pulse: 500us-2500us
   - Operating Parameters:
     - Operating Voltage: 4.8V~6V (5V works best)
+
     - Average Speed: ~0.18sec/60°
+
     - Stall Torque (4.8V): 3kg.cm/41.74oz.in
+
     - Stall Torque (6V): 3.2kg.com/44.52oz.in
+
     - Required Pulse: 500us-2500us
+
     - Connector Wire Length: 30cm / 11.8"
+
     - Dimensions: 37mm x 54mm x 20mm / 1.5" x 2.1" x 0.8"
+
     - Weight (no horns): 40g
+
     - Spline Count: 25
+
+    - FreeTech Product Description:
+
+      > **This servo rotates fully forward or backwards instead of moving to a position. You**
+      > **can use any servo code, hardware or library to control these servos. Good for**
+      > **making simple moving robots. Comes with four different horns, as shown.**
+      >
+      > **To control with an Arduino, we suggest connecting the control wire to pin 9 or 10**
+      > **and using the Servo library included with the Arduino IDE (see here for an example**
+      > **sketch). Position "90" (1.5ms pulse) is stop, "180" (2ms pulse) is full speed forward,**
+      > **"0" (1ms pulse) is full speed backwards. They may require some simple calibration,**
+      > **simply tell the servo to 'stop' and then gently adjust the potentiometer in the**
+      > **recessed hole with a small screwdriver until the servo stops moving.**
+
+      
+
+      
+
+      | Function      |          |      |
+      | ------------- | -------- | ---- |
+      | STOP          | POS: 90  |      |
+      | FULL FORWARD  | POS: 180 |      |
+      | FULL REARWARD | POS: 0   |      |
+
+      
   - **Robotics Assembly Kit** 
+
     - 1X Solderless Breadboard Holder
     - 1X Arduino Uno R3 
     - 1X Arduino Uno R3 Mount/Enclosure
@@ -76,6 +110,8 @@ Various potential stumbling blocks exist for our completion of this project, as 
       - 19X M4x20mm
       - 27X M4 Washers
       - 27X M4 Nuts
+    - Electrical Tape!! 
+      - Color: Black
 
   
 
