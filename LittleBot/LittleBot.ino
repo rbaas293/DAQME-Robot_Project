@@ -18,6 +18,7 @@ Servo Servo2;//creates Servo2 object
 void setup() {
   Servo1.attach(servoPin1);//attaches servo1 to servopin1
   Servo2.attach(servoPin2);//attaches servo2 to servopin2
+  Serial.begin(9600);
 }
 
 void loop() {
