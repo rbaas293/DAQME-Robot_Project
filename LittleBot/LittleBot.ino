@@ -15,14 +15,14 @@ Servo Servo1;// creates Servo1 object
 int servoPin2 = 11;//declares pin for servo2, RIGHT SERVO!!
 Servo Servo2;//creates Servo2 object
 
+unsigned int count;
+
 void setup() {
   Servo1.attach(servoPin1);//attaches servo1 to servopin1
   Servo2.attach(servoPin2);//attaches servo2 to servopin2
-<<<<<<< HEAD
+
   Serial.begin(9600);
-=======
-  unsigned int count;
->>>>>>> 02323ef4a458efb49898a2a934032f504a85c199
+
 }
 
 void loop() {
