@@ -188,16 +188,16 @@ void loop() {
   }
 }
 void goforward(){
-  Servo1.write(86);//tells servo1 to go full speed clockwise85
+  Servo1.write(85);//tells servo1 to go full speed clockwise85
   Servo2.write(95);//tells servo2 to go full speed clockwise95
 }
 
 void turnright(){
+  Servo1.write(85);//tells servo1 to go full speed counterclockwise
+  Servo2.write(85);//tells servo2 to go full speed clockwise
 }
 
 void turnleft(){
-  Servo1.write(85);//tells servo1 to go full speed counterclockwise
-  Servo2.write(85);//tells servo2 to go full speed clockwise
   Servo1.write(95);//tells servo1 to go full speed clockwise
   Servo2.write(95);//tells servo2 to go full speed counterclockwise
 }
