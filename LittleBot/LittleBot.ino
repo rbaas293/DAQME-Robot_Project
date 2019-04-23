@@ -9,10 +9,10 @@ int frsensor = 0; // Middle Sensor on Analog Pin 0
 const int whitelevl = 600; // reading level is white if <600
 const int blacklevl = 850; // reading level is black if >850
 
-int servoPin1 = 7;//declares pin for servo1
+int servoPin1 = 7;//declares pin for servo1, LEFT SERVO!!
 Servo Servo1;// creates Servo1 object
 
-int servoPin2 = 11;//declares pin for servo2
+int servoPin2 = 11;//declares pin for servo2, RIGHT SERVO!!
 Servo Servo2;//creates Servo2 object
 
 void setup() {
@@ -184,7 +184,7 @@ void loop() {
   }
 }
 void goforward(){
-  Servo1.write(85);//tells servo1 to go full speed clockwise85
+  Servo1.write(86);//tells servo1 to go full speed clockwise85
   Servo2.write(95);//tells servo2 to go full speed clockwise95
 }
 
