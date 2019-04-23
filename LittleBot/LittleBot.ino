@@ -104,6 +104,7 @@ void loop() {
   }
   else //Case 9 : Default to going straight!
   {
+    Serial.println("DEBUG: C9 - DEFAULT, GOING FORWARD.");
     goforward(); // If there is no line, the rover will go forward
   }
 }
