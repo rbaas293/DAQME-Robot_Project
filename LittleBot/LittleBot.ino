@@ -41,11 +41,8 @@ void loop() {
       else{
         Serial.print("DEBUG: C1 - TURNING RIGHT, COUNT= "); Serial.println(count);
       }
-      
-      
       if ((readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C1 - TURN RIGHT, SWITCHING TO NEW CASE...");
-        {break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
+        {Serial.println("DEBUG: EXITING C1 - TURN RIGHT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
     }
   }
   // Case 2 : Right sensors are reading black and left sensors and middle sensor are reading white. Turn right!
@@ -63,8 +60,7 @@ void loop() {
         Serial.print("DEBUG: C2 - TURNING RIGHT, COUNT= "); Serial.println(count);
       }
       if ((readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C2 - TURN RIGHT, SWITCHING TO NEW CASE...");
-        {break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
+        {Serial.println("DEBUG: EXITING C2 - TURN RIGHT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
     }
   }
   // Case 3 : Far right sensor is reading black and left sensors, middle sensor, and middle right sensor are reading white. Turn right!
@@ -81,9 +77,8 @@ void loop() {
       else{
         Serial.print("DEBUG: C3 - TURNING RIGHT, COUNT= "); Serial.println(count);
       }
-      if ((readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C3 - TURN RIGHT, SWITCHING TO NEW CASE...");      
-        {break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
+      if ((readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl)) 
+        {Serial.println("DEBUG: EXITING C3 - TURN RIGHT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
     }
   }
   // Case 4 : Middle right sensor is reading black and left sensors, middle sensor, and far right sensor are reading white. Turn right!
@@ -100,9 +95,8 @@ void loop() {
       else{
         Serial.print("DEBUG: C4 - TURNING RIGHT, COUNT= "); Serial.println(count);
       }
-      if ((readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C4 - TURN RIGHT, SWITCHING TO NEW CASE...");  
-        {break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
+      if ((readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl))  
+        {Serial.println("DEBUG: EXITING C4 - TURN RIGHT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensors are reading white and middle sensors are reading black
     }
   }
   // Case 5 : Left sensors and middle sensor are reading black and right sensors are reading white. Turn left!
@@ -120,8 +114,7 @@ void loop() {
         Serial.print("DEBUG: C5 - TURNING LEFT, COUNT= "); Serial.println(count);
       }
       if ((readQD(flsensor) < blacklevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C5 - TURN LEFT, SWITCHING TO NEW CASE...");  
-        {break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
+        {Serial.println("DEBUG: EXITING C5 - TURN LEFT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
     }
   }
   // Case 6 : Left sensors are reading black and right sensors and middle sensor are reading white. Turn left!
@@ -139,8 +132,8 @@ void loop() {
         Serial.print("DEBUG: C6 - TURNING LEFT, COUNT= "); Serial.println(count);
       }
       if ((readQD(flsensor) < blacklevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C6 - TURN LEFT, SWITCHING TO NEW CASE..."); 
-        {break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
+         
+        {Serial.println("DEBUG: EXITING C6 - TURN LEFT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
     }
   }
   // Case 7 : Far left sensor is reading black and right sensors, middle sensor, and middle left sensor are reading white. Turn left!
@@ -157,9 +150,8 @@ void loop() {
       else{
         Serial.print("DEBUG: C7 - TURNING LEFT, COUNT= "); Serial.println(count);
       }
-      if ((readQD(flsensor) < blacklevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C7 - TURN LEFT, SWITCHING TO NEW CASE..."); 
-        {break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
+      if ((readQD(flsensor) < blacklevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl)) 
+        {Serial.println("DEBUG: EXITING C7 - TURN LEFT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
     }
   }
   // Case 8 : Middle left sensor is reading black and right sensors, middle sensor, and far left sensor are reading white. Turn left!
@@ -176,9 +168,8 @@ void loop() {
       else{
         Serial.print("DEBUG: C8 - TURNING LEFT, COUNT= "); Serial.println(count);
       }
-      if ((readQD(flsensor) < blacklevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl))
-        Serial.print("DEBUG: EXITING C8 - TURN LEFT, SWITCHING TO NEW CASE..."); 
-        {break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
+      if ((readQD(flsensor) < blacklevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl)) 
+        {Serial.println("DEBUG: EXITING C8 - TURN LEFT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
     }
   }
   else //Case 9 : Default to going straight!
