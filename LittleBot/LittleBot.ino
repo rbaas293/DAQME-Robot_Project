@@ -1,12 +1,12 @@
 #include <Servo.h> //includes servo library
 
-int flsensor = 4; // Left Sensor on Analog Pin 4
-int mlsensor = 3; // Right Sensor on Analog Pin 3
-int msensor = 2; // Middle Sensor on Analog Pin 2
-int mrsensor = 1; // Right Sensor on Analog Pin 1
-int frsensor = 0; // Middle Sensor on Analog Pin 0
+int flsensor = A0; // Left Sensor on Analog Pin 4
+int mlsensor = A1; // Right Sensor on Analog Pin 3
+int msensor = A2; // Middle Sensor on Analog Pin 2
+int mrsensor = A3; // Right Sensor on Analog Pin 1
+int frsensor = A4; // Middle Sensor on Analog Pin 0
 
-const int whitelevl = 600; // reading level is white if <600
+const int whitelevl = 400; // reading level is white if <600
 const int blacklevl = 850; // reading level is black if >850
 
 int servoPin1 = 7;//declares pin for servo1, LEFT SERVO!!
@@ -26,7 +26,6 @@ void setup() {
 }
 
 void loop() {
-
   // Case 1 : Right sensors and middle sensor are reading black and left sensors are reading white. Turn right!
   if (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > blacklevl)
   {
@@ -113,7 +112,7 @@ void loop() {
       else{
         Serial.print("DEBUG: C5 - TURNING LEFT, COUNT= "); Serial.println(count);
       }
-      if ((readQD(flsensor) < blacklevl && readQD(mlsensor) < blacklevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl))
+      if ((readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > whitelevl && readQD(frsensor) > whitelevl) || (readQD(flsensor) < whitelevl && readQD(mlsensor) < whitelevl && readQD(msensor)< blacklevl && readQD(mrsensor) > blacklevl && readQD(frsensor) > whitelevl))
         {Serial.println("DEBUG: EXITING C5 - TURN LEFT, SWITCHING TO NEW CASE...");break;} // Break if Left sensor and right sensor are reading white and middle sensor is reading black
     }
   }
